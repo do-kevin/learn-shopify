@@ -3,8 +3,14 @@
 </div>
 
 <script>
-    const sectionData = {{ section | json }};
-    console.log("section: ", sectionData);
+  const sectionSettings = {
+    {% for setting in section.settings %}
+      {% unless setting[1] == blank %}
+        "{{ setting[0] }}": {{ setting[1] | json }}{% unless forloop.last %},{% endunless %}
+      {% endunless %}
+    {% endfor %}
+  };
+  console.log('Section settings:', sectionSettings);
 </script>
 
 {% schema %}
