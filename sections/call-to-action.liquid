@@ -1,0 +1,43 @@
+{{ 'call-to-action.css' | asset_url | stylesheet_tag }}
+
+<div class="call-to-action-hero page-width">
+  <h1>
+    {{ section.settings['cta-title'] }}
+  </h1>
+  <a class="call-to-action-hero__button" href="{{ section.settings['cta-anchor'] }}">
+    {{ section.settings['cta-text'] }}
+  </a>
+</div>
+
+{% comment %}
+  <script>
+    const sectionSettings = {{ section.settings | json }};
+    console.log("section: ", sectionSettings);
+  </script>
+{% endcomment %}
+
+{% schema %}
+{
+  "name": "Call to action",
+  "settings": [
+    {
+      "label": "Label",
+      "id": "cta-text",
+      "type": "text",
+      "default": "SHOP NOW"
+    },
+    {
+      "label": "Link",
+      "id": "cta-anchor",
+      "type": "text",
+      "default": "/"
+    },
+    {
+      "label": "Title",
+      "id": "cta-title",
+      "type": "text",
+      "default": "Welcome, please take a look at our collection"
+    }
+  ]
+}
+{% endschema %}
