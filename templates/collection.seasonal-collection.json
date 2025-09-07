@@ -42,5 +42,5 @@
       }
     }
   },
-  "order": ["banner", "product-grid"]
+  "order": ["banner", "call-to-action", "product-grid"]
 }
