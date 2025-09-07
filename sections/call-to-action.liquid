@@ -3,5 +3,17 @@
 </div>
 
 {% javascript %}
-  console.log("hellow world")
+  console.log("settings: ", settings);
 {% endjavascript %}
+
+{% schema %}
+{
+    "name": "Call to action",
+    "settings": [{
+        "label": "Label",
+        "id": "call-to-action",
+    "type": "text",
+"default": "SHOP NOW"
+}]
+}
+{% endschema %}
