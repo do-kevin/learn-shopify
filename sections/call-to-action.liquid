@@ -1,20 +1,57 @@
-<div>
-    {{ section.settings.cta-text }}
+<div class="call-to-action-hero page-width">
+  <h1>
+    {{ section.settings['cta-title'] }}
+  </h1>
+  <a href="{{ section.settings['cta-anchor'] }}">
+    {{ section.settings['cta-text'] }}
+  </a>
 </div>
 
-<script>
+<style>
+  .call-to-action-hero {
+    text-align: center;
+    font-weight: 900;
+    font-size: 64px;
+    position: relative;
+    display: flex;
+  }
+  .call-to-action-hero__button {
+    align-self: center;
+    color: #fff;
+    background-color: #000;
+    border-radius: 25px;
+  }
+</style>
+
+{% comment %}
+  <script>
     const sectionSettings = {{ section.settings | json }};
     console.log("section: ", sectionSettings);
-</script>
+  </script>
+{% endcomment %}
 
 {% schema %}
 {
-    "name": "Call to action",
-    "settings": [{
-        "label": "Label",
-        "id": "cta-text",
-    "type": "text",
-"default": "SHOP NOW"
-}]
+  "name": "Call to action",
+  "settings": [
+    {
+      "label": "Label",
+      "id": "cta-text",
+      "type": "text",
+      "default": "SHOP NOW"
+    },
+    {
+      "label": "Link",
+      "id": "cta-anchor",
+      "type": "text",
+      "default": "/"
+    },
+    {
+      "label": "Title",
+      "id": "cta-title",
+      "type": "text",
+      "default": "Welcome, please take a look at our collection"
+    }
+  ]
 }
 {% endschema %}
