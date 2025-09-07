@@ -1,9 +1,9 @@
 <div>
-    Hello world
+    {{ section.settings.cta-text }}
 </div>
 
 {% javascript %}
-  console.log("settings: ", settings);
+  console.log("section: ", section);
 {% endjavascript %}
 
 {% schema %}
@@ -11,7 +11,7 @@
     "name": "Call to action",
     "settings": [{
         "label": "Label",
-        "id": "call-to-action",
+        "id": "cta-text",
     "type": "text",
 "default": "SHOP NOW"
 }]
