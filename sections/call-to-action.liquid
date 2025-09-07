@@ -1,27 +1,13 @@
+{{ 'call-to-action.css' | asset_url | stylesheet_tag }}
+
 <div class="call-to-action-hero page-width">
   <h1>
     {{ section.settings['cta-title'] }}
   </h1>
-  <a href="{{ section.settings['cta-anchor'] }}">
+  <a class="call-to-action-hero__button" href="{{ section.settings['cta-anchor'] }}">
     {{ section.settings['cta-text'] }}
   </a>
 </div>
-
-<style>
-  .call-to-action-hero {
-    text-align: center;
-    font-weight: 900;
-    font-size: 64px;
-    position: relative;
-    display: flex;
-  }
-  .call-to-action-hero__button {
-    align-self: center;
-    color: #fff;
-    background-color: #000;
-    border-radius: 25px;
-  }
-</style>
 
 {% comment %}
   <script>
