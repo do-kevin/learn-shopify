@@ -2,9 +2,10 @@
     {{ section.settings.cta-text }}
 </div>
 
-{% javascript %}
-  console.log("section: ", section);
-{% endjavascript %}
+<script>
+    const sectionData = {{ section | json }};
+    console.log("section: ", sectionData);
+</script>
 
 {% schema %}
 {
